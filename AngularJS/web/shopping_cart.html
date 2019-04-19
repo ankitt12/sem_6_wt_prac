@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<html>
+ <head>
+       <!--<script src="angular.min.js"></script> -->
+	   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+           <script src="shopping_cart.js"></script>
+		
+ </head>
+ <body>
+     <!--
+    
+     <span ng-bind="item.qty * item.cost | currency:'Rs '"></span>
+     -->
+<h2>Shopping Card Example</h2>
+
+<div ng-app="myapp" ng-controller="CartForm">
+    <table class="table">
+        <tr>            
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Cost</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="item in cart.items">
+            <td><input type="text" ng-model="item.description"></td>        
+            <td><input type="number" ng-model="item.qty" ng:required></td>
+            <td><input type="number" ng-model="item.cost" ng:required></td>
+            <td  class = "ng-cloak"> {{item.qty * item.cost | currency:'Rs '}}</td>
+            <td  class = "ng-cloak">[<a href ng:click="removeItem($index)">X</a>]</td>
+        </tr>
+        <tr>
+            <td><a href ng:click="addItem()">add item</a></td>
+            <td></td>
+            <td>Total:</td>
+            <td  class="ng-cloak">{{total() | currency:'Rs '}}</td>
+        </tr>
+    </table>
+</div>
+
+ </body>
+ </html>
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <!--<script src="angular.min.js"></script> -->
+	   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+           <script src="technology_like_dislike.js"></script>
+           <link href="technology_like_dislike_css.css" rel="stylesheet" />
+    </head>
+ 
+ <body ng-app="myModule">
+     <div ng-controller="myController">
+         <table>
+             <thead>
+                 <tr>
+                     <th>Name</th>
+                     <th>Likes</th>
+                     <th>DisLikes</th>
+                     <th>Like/Dislikes</th> 
+                 </tr>
+             </thead>
+             <tbody> <!-- ng-repeat is not working -->
+                     <tr ng-repeat="technology in technologies">
+                     <td  class = "ng-cloak">{{technology.name }}</td>
+                     <td  class = "ng-cloak">{{technology.likes}}</td>
+                     <td  class = "ng-cloak">{{technology.dislikes}}</td>
+                     <td >
+                         <input type="button" value="Like" ng-click="incrementLikes(technology)" >
+                         <input type="button" value="DisLike" ng-click="incrementDisLikes(technology)">
+                     </td>     
+                 </tr>
+             </tbody>
+         </table>
+     </div>
+      
+    </body>
+</html>
