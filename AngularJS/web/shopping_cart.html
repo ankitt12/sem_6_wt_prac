@@ -28,7 +28,7 @@
             <td><input type="number" ng-model="item.qty" ng:required></td>
             <td><input type="number" ng-model="item.cost" ng:required></td>
             <td  class = "ng-cloak"> {{item.qty * item.cost | currency:'Rs '}}</td>
-            <td  class = "ng-cloak">[<a href ng:click="removeItem($index)">X</a>]</td>
+            <td  class = "ng-cloak">[<a href ng-click="removeItem($index)">X</a>]</td>
         </tr>
         <tr>
             <td><a href ng:click="addItem()">add item</a></td>
